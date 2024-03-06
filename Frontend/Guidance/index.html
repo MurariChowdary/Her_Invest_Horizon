@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>  
+ <html lang="en">  
+  <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+   <link rel="stylesheet" href="style.css" />  
+   <title>Form Input Wave</title>  
+  </head>  
+  <body>  
+    <!DOCTYPE html>
+<html lang="en" ng-app="myapp" ng-controller="mycntrl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Empowerment - Income Ways</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="mycntrl as ctrl">
+        <form>
+            <div class="select-group">
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender" ng-model="gender">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="not_specified">Do not choose to reveal</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="education">Educated:</label>
+                <select name="education" id="education" ng-model="edu">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="class">Graduation:</label>
+                <select name="class" id="class" ng-model="classes">
+                    <option value="na">NA</option>
+                    <option value="10">10th</option>
+                    <option value="12">12th</option>
+                    <option value="graduation">Graduation</option>
+                    <option value="post_graduation">Post Graduation</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="skills">Skills &interests:</label>
+                <select name="skills" id="skills" ng-model="skills">
+                    <option value="cook">cooking</option>
+                    <option value="teach">teaching</option>
+                    <option value="comm">Communication skills</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="mode">Mode Of Working:</label>
+                <select name="mode" id="mode" ng-model="mode">
+                    <option value="yes">remote</option>
+                    <option value="no">physical</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="study">Field of Study:</label>
+                <select name="study" id="study" ng-model="study">
+                    <option value="na">NA</option>
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="commerce">Commerce</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="talents">Talents:</label>
+                <select name="talents" id="talents" ng-model="talents">
+                    <option value="na">NA</option>
+                    <option value="writing">Writing</option>
+                    <option value="design">Design</option>
+                    <option value="coding">Coding</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="hobbies">Hobbies:</label>
+                <select name="hobbies" id="hobbies" ng-model="hobbies">
+                    <option value="na">NA</option>
+                    <option value="reading">Reading</option>
+                    <option value="painting">Painting</option>
+                    <option value="music">Music</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="availability">Availability:</label>
+                <select name="availability" id="availability" ng-model="availability">
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+            <button class="btn-submit" ng-click="redirectToPage()" type="button">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+        angular.module('myapp', [])
+          .controller('mycntrl', ['$scope', '$window', function ($scope, $window) {
+            $scope.redirectToPage = function () {
+              if ($scope.gender == "female" && $scope.edu == "yes" && ($scope.classes == "10" || $scope.classes == "12") && $scope.skills == "comm" && $scope.mode== "remote") {
+                var newPageUrl = 'https://www.naukri.com/women-wfh-jobs?wfhType=2';
+                $window.location.href = newPageUrl;
+              } else if ($scope.gender == "female" && $scope.edu == "no" && $scope.skills == "cooking" && $scope.classes=="na" && $scope.mode=="physical") {
+                var newPageUrl = 'https://theworkathomewife.com/get-paid-for-your-recipes/';
+              } else if ($scope.gender == "female" && $scope.edu == "yes" && $scope.skills == "teaching" && $scope.classes=="10" && $scope.mode=="physical") {
+                var newPageUrl = 'https://theworkathomewife.com/get-paid-for-your-recipes/';
+              } else if ($scope.gender == "female" && $scope.edu == "yes" && $scope.skills == "teaching" && $scope.classes=="12" && $scope.mode=="physical") {
+                var newPageUrl = 'https://theworkathomewife.com/get-paid-for-your-recipes/';
+              } else if ($scope.gender == "female" && $scope.edu == "yes" && $scope.skills == "teaching" && $scope.classes=="graduation" && $scope.mode=="physical") {
+                var newPageUrl = 'https://theworkathomewife.com/get-paid-for-your-recipes/';
+              } else if ($scope.gender == "female" && $scope.edu == "yes" && $scope.skills == "teaching" && $scope.classes=="post_graduation" && $scope.mode=="physical") {
+                var newPageUrl = 'https://theworkathomewife.com/get-paid-for-your-recipes/';
+              } else if ($scope.gender == "male" && $scope.edu == "yes" && $scope.skills == "comm" && $scope.mode== "remote") {
+                var newPageUrl = 'https://www.naukri.com/remote-jobs?searchType=0&searchQuery=communication+skills&sortType=1&pg=1&searchLocation=&cities=0&paused=1&industryType=0';
+              } else if ($scope.gender == "not_specified" && $scope.edu == "yes" && $scope.skills == "comm" && $scope.mode== "remote") {
+                var newPageUrl = 'https://www.naukri.com/remote-jobs?searchType=0&searchQuery=communication+skills&sortType=1&pg=1&searchLocation=&cities=0&paused=1&industryType=0';
+              } else if ($scope.gender == "female" && $scope.edu == "yes" && $scope.skills == "comm" && $scope.mode== "physical") {
+                var newPageUrl = 'https://www.naukri.com/job-listings?searchQuery=communication+skills&searchType=0&sortType=1&pg=1&searchLocation=&cities=0&paused=1&industryType=0';
+              } else if ($scope.gender == "male" && $scope.edu == "yes" && $scope.skills == "comm" && $scope.mode== "physical") {
+                var newPageUrl = 'https://www.naukri.com/job-listings?searchQuery=communication+skills&searchType=0&sortType=1&pg=1&searchLocation=&cities=0&paused=1&industryType=0';
+              } else {
+                alert('Redirecting to a default page or handle this case as needed.');
+              }
+            };
+          }]);
+      </script>
+</body>
+
+</html>
+  
+   <script src="script.js"></script>  
+  </body>  
+ </html>
